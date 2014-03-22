@@ -1,0 +1,18 @@
+common: &common
+  adapter:  mysql2
+  encoding: utf8
+  username: root
+  password: 12345678
+  pool: 
+
+development:
+  database: diploma_development
+  <<: *common
+
+test:
+  database: diploma_test
+  <<: *common
+
+production:
+  database: diploma_production
+  <<: *common
