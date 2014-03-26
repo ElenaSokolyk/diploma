@@ -1,0 +1,9 @@
+= form_for @article, class: 'form' do |f|
+  ="Article"
+  .field
+    = f.label  :title, "Title"
+    = f.text_field :title
+  .field
+    = f.label :text, "Text"
+    = f.text_area :text
+  = f.submit "Create article"
