@@ -9,6 +9,7 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'mysql2'
+gem 'rolify'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
