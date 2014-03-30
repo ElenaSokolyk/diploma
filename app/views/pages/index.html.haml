@@ -2,5 +2,10 @@
   %h1 
     Hello, diploma! 
     .small Subtext for header
+=link_to "New article", new_article_path
+.articles
+  %h3 Articles list
+  - current_user.articles.each do |article| 
+    .article= article.title
 
 
