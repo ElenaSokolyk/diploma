@@ -1,11 +1,9 @@
 Diploma::Application.routes.draw do
   devise_for :users
-  get "pages/index"
   root to: "pages#landing"
 
   authenticated :user do
-    root :to => "pages#index", as: :user_root
+    root :to => "articles#index", as: :user_root
   end
-
-  resources :articles, only: [:create, :new, :show]
+  resources :articles, only: [:index, :create, :new,  :show]
 end

@@ -1,0 +1,16 @@
+.page-header
+  %h1 
+    Hello, diploma! 
+    .small Subtext for header
+=link_to "New article", new_article_path
+.articles
+  %h3 Articles list
+  - @articles.each do |article| 
+    .article
+      = article.title
+      .documents
+        - article.documents.each do |document|
+          - if document.file.image?
+            .document= image_tag document.file_url(:thumb)
+          - else 
+            .document= link_to document.title ,document.file.url, target: '_blank'

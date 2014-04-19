@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330153603) do
+ActiveRecord::Schema.define(version: 20140419101046) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20140330153603) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "documents", force: true do |t|
+    t.string   "title"
+    t.string   "file"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "documents", ["article_id"], name: "index_documents_on_article_id", using: :btree
 
   create_table "faculties", force: true do |t|
     t.string   "name"

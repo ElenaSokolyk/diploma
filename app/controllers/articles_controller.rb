@@ -1,11 +1,15 @@
 class ArticlesController < ApplicationController
-  # before_filter :authenticate_user!
+  def index
+    @articles = current_user.articles.includes(:documents)
+  end
 
   def new 
     @article = Article.new
+    @article.documents.build
   end
 
   def create
+    puts article_params
     @article = current_user.articles.build(article_params)
     if @article.save
       redirect_to user_root_path
@@ -22,6 +26,7 @@ class ArticlesController < ApplicationController
   private 
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, 
+      documents_attributes: [:title, :file])
   end
 end
