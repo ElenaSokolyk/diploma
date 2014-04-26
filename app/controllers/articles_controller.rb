@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  # before_filter :authenticate_user!
 
   def new 
     @article = Article.new
@@ -7,7 +8,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      redirect_to root_path
+      redirect_to user_root_path
       flash[:success] = "Your article was successfully created"
     else
       render "new"
