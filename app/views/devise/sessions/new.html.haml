@@ -1,10 +1,8 @@
 .devise-form
   = form_for(resource, as: resource_name, :html => {class: "form-signin", role: "form"}, url: session_path(resource_name)) do |f|
     %h2.form-signin-heading Please sign in
-    %div
-      = f.email_field :email, autofocus: true, placeholder: 'Email address', class: 'form-control'
-    %div
-      = f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control'
+    = f.email_field :email, autofocus: true, placeholder: 'Email address', class: 'form-control'
+    = f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control'
 
     - if devise_mapping.rememberable?
       %div

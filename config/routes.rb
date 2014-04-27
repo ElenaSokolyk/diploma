@@ -7,5 +7,5 @@ Diploma::Application.routes.draw do
     root :to => "pages#index", as: :user_root
   end
 
-  resources :articles, only: [:create, :new]
+  resources :articles, only: [:create, :new, :show]
 end
