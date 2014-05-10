@@ -2,6 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-  $('.summernote').summernote
+  summerNote = $('.summernote')
+  
+  summerNote.summernote
     height: 300
-    focus: true 
+    
+  summerNote.code summerNote.val()
+
+  summerNote.closest('form').submit ->
+    summerNote.val summerNote.code()
+    true

@@ -1,1 +1,18 @@
-*, *:before, *:after {@include box-sizing(border-box);}
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  @include margin-trailer(4);
+  font-family: $base-font-family;
+}
+
+a {
+  cursor: pointer;
+  @include transition(all .1s ease-in 0s);
+}

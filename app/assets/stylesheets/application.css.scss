@@ -1,9 +1,15 @@
-@import "bootstrap/bootstrap";
 @import "compass";
+@import "bootstrap/bootstrap";
+
+@include global-reset;
 @import "font-awesome";
 @import "summernote";
+@import "fonts";
 
 @import "general";
+
+@include establish-baseline;
+
 @import "pages/devise";
 @import "pages/article-show";
 @import "modules/navbar";

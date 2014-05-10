@@ -2,4 +2,13 @@
   position: static;
   display: block;
   margin-bottom: 20px;
+  width: 100%;
+}
+
+.navbar {
+  @include border-radius(0);
+}
+
+.dropdown-menu {
+  width: 100%;
 }

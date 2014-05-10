@@ -2,11 +2,12 @@
   ="Article"
   .field
     = article_form.label  :title, "Title"
-    = article_form.text_field :title
+    = article_form.text_field :title, class: 'form-control'
   .field
     = article_form.label :text, "Text"
     = article_form.text_area :text,  class: 'summernote'
+
   = article_form.fields_for :documents do |document_form|
-    = document_form.text_field :title
+    = document_form.text_field :title, class: 'form-control'
     = document_form.file_field :file
   = article_form.submit "Create article"

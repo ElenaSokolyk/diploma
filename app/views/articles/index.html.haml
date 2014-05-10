@@ -8,6 +8,7 @@
   - @articles.each do |article| 
     .article
       = article.title
+      = article.text
       .documents
         - article.documents.each do |document|
           - if document.file.image?
