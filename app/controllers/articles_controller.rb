@@ -27,6 +27,6 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :text, 
-      documents_attributes: [:title, :file])
+      documents_attributes: [:id, :title, :file, :_destroy])
   end
 end

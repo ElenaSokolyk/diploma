@@ -10,7 +10,15 @@
 
 @include establish-baseline;
 
+@import "components/list_element";
+@import "components/upload_button";
+
 @import "pages/devise";
 @import "pages/article-show";
+@import "pages/articles/index";
+
 @import "modules/navbar";
 @import "modules/footer";
+@import "modules/page";
+@import "modules/horizontal_forms";
+@import "modules/documents_form";

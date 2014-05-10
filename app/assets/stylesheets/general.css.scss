@@ -2,17 +2,18 @@
   @include box-sizing(border-box);
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
+html { position: relative; }
 
-body {
-  @include margin-trailer(4);
-  font-family: $base-font-family;
-}
+html, body, .fullscreen-container { height: 100% }
+
+body { font-family: $base-font-family; }
+
+.outer-wrapper { min-height: 100%; }
+
+.footer-buffer { height: 80px; }
 
 a {
   cursor: pointer;
-  @include transition(all .1s ease-in 0s);
+  @include transition(all .2s ease-in 0s);
+  text-decoration: none;
 }

@@ -1,17 +1,24 @@
-.page-header
-  %h1 
-    Hello, diploma! 
-    .small Subtext for header
-=link_to "New article", new_article_path
-.articles
-  %h3 Articles list
-  - @articles.each do |article| 
-    .article
-      = article.title
-      = article.text
-      .documents
-        - article.documents.each do |document|
-          - if document.file.image?
-            .document= image_tag document.file_url(:thumb)
-          - else 
-            .document= link_to document.title ,document.file.url, target: '_blank'
+.page
+  .page-header
+    %h1.page-title Articles list 
+    .actions= link_to "New article", new_article_path, class: 'btn btn-success'
+
+  %ul.articles
+    - @articles.each do |article| 
+      %li.article-wrapper
+        = link_to article, class: 'article' do
+          .header= article.title
+          .content= article.text.html_safe
+          .meta-info
+            .author= 'Author: ' + article.user.email
+            .updated= 'Updated at: ' + article.updated_at.to_s
+            %ul
+              %li.documents= 'Documents: ' + article.documents.count.to_s
+              %li.comments= 'Comments: 0'
+
+  -#      .documents
+  -#        - article.documents.each do |document|
+  -#          - if document.file.image?
+  -#            .document= image_tag document.file_url(:thumb)
+  -#          - else 
+  -#            .document= link_to document.title ,document.file.url, target: :_blank
