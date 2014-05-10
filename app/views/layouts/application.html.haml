@@ -7,5 +7,7 @@
     = csrf_meta_tags
   %body
     - if user_signed_in?
-      = link_to "Logout", destroy_user_session_path, method: :delete
+      = render 'layouts/navbar'
     = yield
+    - if user_signed_in?
+      = render 'layouts/footer'

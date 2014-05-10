@@ -6,6 +6,6 @@
 .articles
   %h3 Articles list
   - current_user.articles.each do |article| 
-    .article= article.title
+    .article= link_to article.title, article_path(article)
 
 
