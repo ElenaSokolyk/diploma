@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap/bootstrap
 //= require summernote
+//= require jquery_nested_form
 //= require_tree .

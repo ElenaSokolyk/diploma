@@ -1,0 +1,55 @@
+%list-element {
+  display: block;
+  @include margin-trailer(1);
+  height: 20em;
+  border: 1px solid black;
+  position: relative;
+  background: white;
+  color: black;
+  @include opacity(.85);
+  @include transition(opacity .2s ease-in 0s);
+  
+  &:hover {
+    @include opacity(1);
+  }
+  
+  .header, .meta-info {
+    background: #222;
+    color: white;
+  }
+
+  .header {
+    @include adjust-font-size-to(18px, 1);
+    padding: 1em;
+  }
+  
+  .content {
+    height: 60%;
+    padding: 1em;
+    overflow: hidden;
+  }
+  
+  .meta-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    
+    ul, div {
+      border-top: 1px solid black;
+    }
+  
+    ul {
+      @include clearfix;
+
+      li {
+        float: left;
+        width: 50%;
+        line-height: 1.5em;
+      }
+
+      li + li { border-left: 1px solid black; }
+    }
+  }
+}

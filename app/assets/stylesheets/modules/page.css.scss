@@ -1,0 +1,29 @@
+.page {  
+  .page-header {
+    @extend .row;
+    @include margin-leader(0);
+    @include margin-trailer(1);
+  }
+  
+  .page-title, .actions {
+    @extend .col-xs-6;
+  }
+
+  .page-title {
+    text-align: left;
+    font-weight: $bold;
+    @include adjust-font-size-to(24px, 2);
+  }
+  
+  .actions {
+    text-align: right;
+  }
+  
+  .btn {
+    @include adjust-font-size-to(14px, 1);
+    @include padding-leader(.35);
+    @include padding-trailer(.35);
+    @include margin-leader(.15);
+    @include margin-trailer(.15);
+  }
+}

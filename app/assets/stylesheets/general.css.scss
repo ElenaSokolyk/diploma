@@ -1,1 +1,19 @@
-*, *:before, *:after {@include box-sizing(border-box);}
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+html { position: relative; }
+
+html, body, .fullscreen-container { height: 100% }
+
+body { font-family: $base-font-family; }
+
+.outer-wrapper { min-height: 100%; }
+
+.footer-buffer { height: 80px; }
+
+a {
+  cursor: pointer;
+  @include transition(all .2s ease-in 0s);
+  text-decoration: none;
+}

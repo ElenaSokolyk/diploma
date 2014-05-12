@@ -1,0 +1,31 @@
+.horizontal-forms {
+  > .wrapper {
+    @extend .row;
+  }
+
+  .main-form {
+    @extend .col-md-8;
+  }
+  
+  .sub-form {
+    @extend .col-md-3;
+    float: right;
+
+    .remove_nested_fields {
+      @extend .btn;
+      @extend .btn-danger;
+      display: none;
+    }
+    
+    .add_nested_fields {
+      @extend .btn;
+      @extend .btn-success;
+      display: block;
+    }
+  }
+  
+  .form-actions {
+    @include margin-leader(1);
+    text-align: left;
+  }
+}

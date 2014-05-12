@@ -1,0 +1,15 @@
+#articles-index {
+  .articles {
+    @extend .row;
+  }
+  
+  .article-wrapper {
+    @extend .col-md-4;
+    @extend .col-sm-6;
+    @extend .col-xs-12;
+  }
+  
+  .article {
+    @extend %list-element;
+  }
+}

@@ -1,0 +1,16 @@
+.upload-button {
+  @extend .btn;
+  @extend .btn-warning;
+  position: relative;
+  @include inline-block;
+  overflow: hidden;
+  
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    @include opacity(0);
+  }
+}
