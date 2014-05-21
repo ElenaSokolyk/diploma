@@ -1,0 +1,27 @@
+= nested_form_for @article, class: 'form' do |article_form|
+  .horizontal-forms
+    .wrapper
+      .main-form
+        .field
+          .label-wrapper= article_form.label  :title, "Title"
+          = article_form.text_field :title, class: 'form-control'
+        .field
+          .label-wrapper= article_form.label :text, "Text"
+          = article_form.text_area :text,  class: 'summernote'
+
+      .sub-form
+        .documents-form
+          = article_form.fields_for :documents do |document_form|
+            .field
+              .label-wrapper= document_form.label :title
+              = document_form.text_field :title, class: 'form-control'
+            .field
+              .label-wrapper= document_form.label :file
+              = upload_button('Upload file', document_form.file_field(:file))
+            = article_form.link_to_remove 'Remove a document'
+
+        = article_form.link_to_add "Add document", :documents, data: { target: ".documents" }
+
+    .form-actions
+      = link_to 'Go back', user_root_path, class: 'btn btn-danger'
+      = article_form.submit nil, class: 'btn btn-success'
