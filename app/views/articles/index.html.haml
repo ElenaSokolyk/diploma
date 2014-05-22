@@ -11,7 +11,7 @@
           =link_to '', article_path(article), method: :delete, confirm: "Are you sure?", class: 'fa fa-trash-o'
         = link_to article, class: 'article' do
           .header
-            %span.text= article.title
+            .text= article.title
           .content= article.decorate.short_text
           .meta-info
             .author= 'Author: ' + article.user.email

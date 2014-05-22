@@ -8,7 +8,9 @@ class CommentsController < ApplicationController
     # @article = Article.find(params[:id])
     puts "=========="
     puts comment_params
-    @comment = current_user.comments.create(comment_params)
+    @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
+    @comment.save
     redirect_to user_root_path
   end
 
