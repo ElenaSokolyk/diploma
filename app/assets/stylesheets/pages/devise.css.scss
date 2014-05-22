@@ -9,6 +9,10 @@
     padding: 15px;
     margin: 0 auto;
   }
+  .form-signin-heading {
+    @include adjust-font-size-to(20px);
+    font-weight: $semi-bold;
+  }
   .form-signin-heading,
   .checkbox {
     margin-bottom: 10px;

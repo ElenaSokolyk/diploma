@@ -6,9 +6,13 @@
   %ul.articles
     - @articles.each do |article| 
       %li.article-wrapper
+        %span.actions-wrapper
+          =link_to '', edit_article_path(article), class: 'fa fa-pencil'
+          =link_to '', article_path(article), method: :delete, confirm: "Are you sure?", class: 'fa fa-trash-o'
         = link_to article, class: 'article' do
-          .header= article.title
-          .content= article.text.html_safe
+          .header
+            .text= article.title
+          .content= article.decorate.short_text
           .meta-info
             .author= 'Author: ' + article.user.email
             .updated= 'Updated at: ' + article.updated_at.to_s

@@ -4,9 +4,29 @@
   }
   
   .article-wrapper {
+    position: relative;
     @extend .col-md-4;
     @extend .col-sm-6;
     @extend .col-xs-12;
+
+    &:hover {
+      .actions-wrapper {display: block}
+    }
+
+    .actions-wrapper {
+      float: right;
+      display: none;
+      opacity: 0.5;
+      position: absolute;
+      right: 30px;
+      top: 18px;
+      z-index: 3;
+      .fa {
+        @include adjust-font-size-to($base-font-size);
+        color: #fff;
+        & + .fa {margin-left: 5px}
+      }
+    }
   }
   
   .article {

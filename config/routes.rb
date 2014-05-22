@@ -6,5 +6,6 @@ Diploma::Application.routes.draw do
   end
   root to: "pages#landing"
 
-  resources :articles, only: [:index, :create, :new,  :show]
+  resources :articles
+  resources :comments
 end

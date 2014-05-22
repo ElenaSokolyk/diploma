@@ -8,8 +8,28 @@ class ArticlesController < ApplicationController
     @article.documents.build
   end
 
+  def edit
+    @article = Article.find(params[:id])
+    @article.documents.build
+  end
+
+  def update
+    @article = Article.find(params[:id]) 
+    @article.update_attributes(article_params)
+    redirect_to @article
+  end
+
+  def destroy
+    article = Article.find(params[:id])
+    if article.destroy
+      redirect_to user_root_path
+      flash[:success] = "Your article was successfully deleted"
+    else
+      render 'nothing'
+    end
+  end
+
   def create
-    puts article_params
     @article = current_user.articles.build(article_params)
     if @article.save
       redirect_to user_root_path
@@ -21,6 +41,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = Comment.new
   end
 
   private 

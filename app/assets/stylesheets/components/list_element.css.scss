@@ -8,19 +8,28 @@
   color: black;
   @include opacity(.85);
   @include transition(opacity .2s ease-in 0s);
-  
+
   &:hover {
     @include opacity(1);
   }
-  
+
+
   .header, .meta-info {
     background: #222;
     color: white;
   }
 
+
   .header {
     @include adjust-font-size-to(18px, 1);
     padding: 1em;
+
+    .text {
+      width: 200px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
   
   .content {

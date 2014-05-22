@@ -23,6 +23,7 @@
     margin-bottom: 0;
     font-size: 60px;
     font-weight: normal;
+    line-height: 70px;
   }
   .blog-description {
     font-size: 20px;
@@ -84,5 +85,25 @@
   .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
+  }
+}
+
+//Own styles
+.discussion {
+  .comment {
+    @include adjust-font-size-to(14px, 1, 18px);
+    .replies {
+      margin-right: 10px;
+      .text {
+        border-bottom: 1px dashed black;
+        &:hover {border: none}
+      }
+    }
+
+    .replies, .reply, .date {@include adjust-font-size-to(12px, 1, 14px);}
+    .date {
+      color: gray;
+      margin-right: 10px;
+    }
   }
 }

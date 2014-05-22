@@ -17,3 +17,7 @@ a {
   @include transition(all .2s ease-in 0s);
   text-decoration: none;
 }
+
+b {font-weight: bold;}
+em {font-style: italic;}
+textarea {resize: none}
