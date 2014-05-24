@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419101046) do
+ActiveRecord::Schema.define(version: 20140523160756) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 20140419101046) do
     t.datetime "updated_at"
   end
 
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.integer  "department_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "groups", ["department_id"], name: "index_groups_on_department_id", using: :btree
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -85,6 +94,10 @@ ActiveRecord::Schema.define(version: 20140419101046) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "position"
+    t.string   "name"
+    t.string   "surname"
+    t.string   "patronymic"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
