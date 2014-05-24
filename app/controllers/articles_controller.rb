@@ -41,7 +41,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @comment = Comment.new
+    @comment = current_user.comments.build(commentable: @article)
   end
 
   private 

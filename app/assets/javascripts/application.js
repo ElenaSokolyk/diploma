@@ -15,4 +15,6 @@
 //= require bootstrap/bootstrap
 //= require summernote
 //= require jquery_nested_form
+//= require hogan
+//= require_tree ../templates
 //= require_tree .

@@ -1,0 +1,38 @@
+%comment {
+  @include adjust-font-size-to(14px, 1, 18px);
+  @include padding-leader(.5);
+  @include padding-trailer(.5);
+  
+  .meta-info {
+    color: gray;
+    margin-right: 10px;
+  }
+
+  .replies .text {
+    border-bottom: 1px dashed black;
+    &:hover { border: none }
+  }
+  
+  .remove-comment {
+    color: red;
+    display: none;
+    @extend .pull-right;
+  }
+  
+  
+  .meta-info, .action {
+    @include adjust-font-size-to(12px, 1, 14px);
+    
+    & + .meta-info, & + .action { margin-left: 10px }
+  }
+  
+  
+  .subcomments {
+    padding-left: 20px;
+    border-left: 1px solid gray;
+    display: none;
+  }
+  
+  .subcomment { @include adjust-font-size-to(14px, 1, 14px); }
+  .content-wrapper:hover .remove-comment { display: block; }
+}

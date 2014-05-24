@@ -1,0 +1,15 @@
+.comment
+  .content-wrapper
+    .comment-text {{text}}
+    %span.author.meta-info {{user.email}}
+    %span.date.meta-info {{created_at}}
+    %a.replies.action
+      %i.fa.fa-caret-down
+      %span.text {{siblings_count}} replies
+    %a.reply.action{'data-comment' => "{{id}}"}
+      %i.fa.fa-share
+      Reply
+    = link_to "/comments/{{id}}", method: :delete, class: 'remove-comment action', remote: true do
+      %i.fa.fa-times
+      Delete
+  .subcomments

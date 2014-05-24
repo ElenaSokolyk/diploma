@@ -90,20 +90,5 @@
 
 //Own styles
 .discussion {
-  .comment {
-    @include adjust-font-size-to(14px, 1, 18px);
-    .replies {
-      margin-right: 10px;
-      .text {
-        border-bottom: 1px dashed black;
-        &:hover {border: none}
-      }
-    }
-
-    .replies, .reply, .date {@include adjust-font-size-to(12px, 1, 14px);}
-    .date {
-      color: gray;
-      margin-right: 10px;
-    }
-  }
+  .comment { @extend %comment; }
 }
