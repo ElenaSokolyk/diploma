@@ -1,0 +1,8 @@
+.comment.subcomment
+  .content-wrapper
+    .comment-text {{text}}
+    %span.author.meta-info {{user.email}}
+    %span.date.meta-info {{created_at}}
+    = link_to "/comments/{{id}}", method: :delete, class: 'remove-comment action', remote: true do
+      %i.fa.fa-times
+      Delete

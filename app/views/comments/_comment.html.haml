@@ -1,0 +1,18 @@
+.comment{class: "#{'subcomment' if comment.subcomment? }"}
+  .content-wrapper
+    .comment-text= comment.text
+    %span.author.meta-info= comment.user.email
+    %span.date.meta-info= comment.created_at
+    - unless comment.subcomment?
+      %a.replies.action 
+        =fa_icon 'caret-down'
+        %span.text= "#{comment.subcomments.count} replies"
+      %a.reply.action{'data-comment' => comment.id}
+        =fa_icon 'share' 
+        Reply
+    = link_to comment, method: :delete, class: 'remove-comment action', remote: true do
+      = fa_icon 'times'
+      Delete
+
+  .subcomments
+    = render comment.subcomments

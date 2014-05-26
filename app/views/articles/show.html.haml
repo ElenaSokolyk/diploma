@@ -12,26 +12,15 @@
         .title 
           =fa_icon 'comment' 
           Discussion
-        = simple_form_for @comment,  :url => comments_path, method: :post do |f|
-          = f.input :text, as: :text,label: false, input_html: {class: 'form-control col-sm-12'}
-          = f.button :submit, 'Post comment', class: 'post-comment btn btn-info'
-        - @article.comments.each do |comment|
-          = comment.text
+        = render @article.comments
 
-        .comment
-          .comment-text Nice post! Thanks!
-          %span.date August 18, 2013
-          %a.replies 
-            =fa_icon 'caret-down'
-            %span.text 2 replies
-          %a.reply
-            =fa_icon 'share' 
-            Reply
-      / %ul.pager
-      /   %li
-      /     %a{:href => "#"} Previous
-      /   %li
-      /     %a{:href => "#"} Next
+        = simple_form_for @comment, method: :post, html: {class: 'main-comment-form'}, remote: true, format: :json do |f|
+          = f.input :text, as: :text,label: false, input_html: {class: 'form-control col-sm-12'}
+          = f.input :commentable_type, as: :hidden
+          = f.input :commentable_id, as: :hidden
+          = f.input :user_id, as: :hidden
+          = f.button :submit, 'Post comment', class: 'post-comment btn btn-info'
+
     .col-sm-3.col-sm-offset-1.blog-sidebar
       .sidebar-module.sidebar-module-inset
         %h4 About
