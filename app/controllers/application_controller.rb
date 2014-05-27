@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
   protected
   
   def choose_layout
-    user_signed_in? ? 'application' : 'unauthorized'
+    user_signed_in? && !admin_url? ? 'application' : 'unauthorized'
+  end
+
+  private
+
+  def admin_url?
+    request.url.match /admin/ 
   end
 end
