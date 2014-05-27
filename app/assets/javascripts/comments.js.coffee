@@ -9,7 +9,7 @@ $ ->
     $(document).on 'click', '.replies', (event) ->
       subcomments = $(@).parent().siblings('.subcomments')
       if subcomments.find('.comment').length
-        $(@).find('.fa').toggleClass 'fa-caret-down fa-caret-up'
+        $(@).find('.fa').toggleClass 'fa-caret-down fa-caret-right'
         toggleSubcomments subcomments
         
     appendSubcommentForm = (reply, subcomments) ->
@@ -33,9 +33,11 @@ $ ->
     $(document).on 'ajax:success', '.subcomment-form', (event, data, status, xhr) ->
       updateRepliesCount findRepliesFromEvent(event), data.siblings_count
       $(event.currentTarget).before HoganTemplates['subcomment'].render(data)
+      $('#comment_text').val('')
     
     $(document).on 'ajax:success', '.main-comment-form', (event, data, status, xhr) ->
       $(event.currentTarget).before HoganTemplates['comment'].render(data)
+      $('#comment_text').val('')
       
     $(document).on 'ajax:success', '.remove-comment', (event, data, status, xhr) ->
       updateRepliesCount findRepliesFromEvent(event), data.siblings_count

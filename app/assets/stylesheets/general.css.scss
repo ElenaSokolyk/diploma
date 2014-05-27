@@ -6,7 +6,7 @@ html { position: relative; }
 
 html, body, .fullscreen-container { height: 100% }
 
-body { font-family: $base-font-family; }
+body, input, textarea { font-family: $base-font-family; }
 
 .outer-wrapper { min-height: 100%; }
 
@@ -20,4 +20,4 @@ a {
 
 b {font-weight: bold;}
 em {font-style: italic;}
-textarea {resize: none}
+textarea {resize: vertical}
