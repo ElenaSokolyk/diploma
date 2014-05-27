@@ -5,13 +5,13 @@
     %span.date.meta-info= comment.created_at
     - unless comment.subcomment?
       %a.replies.action 
-        =fa_icon 'caret-down'
+        =fa_icon 'caret-right'
         %span.text= "#{comment.subcomments.count} replies"
       %a.reply.action{'data-comment' => comment.id}
         =fa_icon 'share' 
         Reply
     = link_to comment, method: :delete, class: 'remove-comment action', remote: true do
-      = fa_icon 'times'
+      = fa_icon 'trash-o'
       Delete
 
   .subcomments
