@@ -18,7 +18,7 @@
             .updated= 'Updated at: ' + article.updated_at.to_s
             %ul
               %li.documents= 'Documents: ' + article.documents.count.to_s
-              %li.comments= 'Comments: 0'
+              %li.comments= 'Comments: ' + article.decorate.comments_count.to_s
 
   -#      .documents
   -#        - article.documents.each do |document|
