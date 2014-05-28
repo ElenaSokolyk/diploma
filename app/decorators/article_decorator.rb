@@ -13,4 +13,11 @@ class ArticleDecorator < Draper::Decorator
     end
   end
 
+  def comments_count 
+    subcomments_count = 0
+    comments.each do |comment|
+      subcomments_count += comment.subcomments.count
+    end
+    comments.count +  subcomments_count
+  end
 end
