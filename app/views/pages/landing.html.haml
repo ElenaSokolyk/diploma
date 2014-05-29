@@ -1,2 +1,32 @@
-landing
-=link_to "Sign in", user_session_path
+.site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      .masthead.clearfix
+        .inner
+          %h3.masthead-brand 
+            = fa_icon 'university'
+            NMU Blog
+          %ul.nav.masthead-nav
+            %li.active
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "#"} Features
+            %li
+              %a{:href => "#"} Contact
+      .inner.cover
+        %h1.cover-heading First blog for NMU
+        %p.lead Easy and useful system for experience sharing and information exchange within National Mining University. No matter you are student or teacher join us and stay tuned!
+        %p.lead
+          %a.btn.btn-lg.btn-default{:href => user_session_path} Sign in
+      .mastfoot
+        .inner
+          %p
+            NMU Blog for
+            = succeed "," do
+              %a{:href => "http://www.nmu.org.ua/"} NMU
+            by
+            = succeed " " do
+              %a{:href => "http://vk.com/id30563388"} Alexey Dulenko
+            and 
+            = succeed  " " do
+              %a{:href => "http://vk.com/id42721139"} Elena Sokolyk
