@@ -1,0 +1,13 @@
+%li
+  .document.responsive-square
+    .square
+      .content-wrapper
+        .content
+          .preview
+            {{#image}}
+            %img{src: '{{url}}'}
+            {{/image}}
+          .name {{name}}
+          %input{type: :hidden, name: 'article[documents_attributes][][id]', value: "{{id}}"}
+        = link_to "/documents/{{id}}", class: 'content remove' do
+          %i.fa.fa-trash-o

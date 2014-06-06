@@ -1,0 +1,55 @@
+%document-list-element {
+  margin-top: 0.21429em;
+  margin-bottom: 0.21429em;
+  padding: 0;
+  display: block;
+  border: 1px solid #606060;
+  @include border-radius(4px);
+  background-color: #4573d0;
+  
+  img {
+    display: block;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto 20px;
+  }
+
+  .remove {
+    display: none;
+    background: rgba(red, .7);
+    @include adjust-font-size-to(36px);
+    color: white;
+    top: 0;
+    height: 100%;
+  }
+  
+  .remove, .name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  }
+  
+  .name {
+    @include text-overflow;
+    background: #93aec7;
+    @include adjust-font-size-to(10px);
+    padding: 0 5px;
+    border-top: 1px solid #606060;
+  }
+
+  &:hover {
+    .preview, .name {
+      visibility: hidden;
+    }
+    
+    .remove {
+      display: table;
+      
+      .fa {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+}

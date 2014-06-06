@@ -4,6 +4,8 @@ $ ->
 
     summerNote.summernote
       height: 300
+      resize: false
+      scroll: false
 
     summerNote.code summerNote.val()
 

@@ -1,4 +1,4 @@
-#article-show{
+#article-show {
 //  font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
   
@@ -85,6 +85,27 @@
   .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
+  }
+
+  .documents-container {
+    .title {
+      @include adjust-font-size-to(18px, 1, 18px);
+    }
+
+    ul { 
+      display: none;
+    }
+
+    li {
+      @extend .col-md-3;
+      @extend .col-xs-4;
+
+      .document:hover {
+        .preview, .name {
+          visibility: visible;
+        }
+      }
+    }
   }
 }
 

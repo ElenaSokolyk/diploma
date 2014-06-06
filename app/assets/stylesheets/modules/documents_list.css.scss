@@ -1,0 +1,21 @@
+.documents-container {
+  @include margin-trailer(1);
+
+  .title {
+    cursor: pointer;
+    @include margin-leader(1);
+    @include margin-trailer(1);
+    @include adjust-font-size-to(18px, 1, 14px);
+  }
+
+  .documents-list {
+    @extend .row;
+
+    li {
+      @extend .col-md-2;
+      @extend .col-xs-3;
+    }
+
+    .document { @extend %document-list-element; }
+  }
+}
