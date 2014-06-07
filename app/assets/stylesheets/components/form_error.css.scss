@@ -1,0 +1,6 @@
+.field-error {
+  text-align: right;
+  color: red;
+  @include padding-leader(.25);
+  @include padding-trailer(.25);
+}

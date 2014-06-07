@@ -10,4 +10,6 @@ Diploma::Application.routes.draw do
 
   resources :articles
   resources :comments
+  resources :documents, only: [:create, :destroy]
+  match '/documents' => 'documents#create', via: :patch
 end

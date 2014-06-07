@@ -1,16 +1,21 @@
 .upload-button {
-  @extend .btn;
-  @extend .btn-warning;
+  margin-top: 0.21429em;
+  margin-bottom: 0.21429em;
+  @extend .btn-primary;
+  @include border-radius(4px);
   position: relative;
-  @include inline-block;
   overflow: hidden;
   
   input {
     position: absolute;
     left: 0;
     top: 0;
+    @include opacity(0);
     height: 100%;
     width: 100%;
-    @include opacity(0);
+  }
+  
+  .fa {
+    @include adjust-font-size-to(36px);
   }
 }

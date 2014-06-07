@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap/bootstrap
 //= require summernote
-//= require jquery_nested_form
+//= require jquery.fileupload
 //= require hogan
 //= require_tree ../templates
 //= require_tree .

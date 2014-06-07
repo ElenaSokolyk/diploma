@@ -8,6 +8,22 @@
           by
           %a{:href => "#"}= @article.user.email
         %p=@article.text.html_safe
+        
+      - unless @article.documents.empty?
+        .documents-container
+          .title
+            = fa_icon 'caret-down'
+            Documents
+          %ul.documents-list
+            - @article.documents.each do |document|
+              %li
+                = square('document') do
+                  .content
+                    .preview
+                      - if document.file.image?
+                        = image_tag document.file.thumb
+                    .name= document.filename
+        
       .discussion
         .title 
           =fa_icon 'comment' 

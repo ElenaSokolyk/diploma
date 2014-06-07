@@ -128,6 +128,9 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
+    jquery.fileupload-rails (1.8.1)
+      jquery-ui-rails (>= 3.0, < 5.0)
+      railties (>= 3.1)
     json (1.8.1)
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
@@ -276,9 +279,9 @@ DEPENDENCIES
   hogan_assets
   jbuilder
   jquery-rails
+  jquery.fileupload-rails
   mini_magick
   mysql2
-  nested_form
   quiet_assets
   rails (= 4.0.0)
   rails_admin
