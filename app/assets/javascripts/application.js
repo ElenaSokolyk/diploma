@@ -15,6 +15,10 @@
 //= require bootstrap/bootstrap
 //= require summernote
 //= require jquery.fileupload
+//= require jquery.fancybox
+//= require jquery.fancybox-buttons
+//= require jquery.fancybox-thumbs
+//= require jquery.fancybox-media
 //= require hogan
 //= require_tree ../templates
 //= require_tree .

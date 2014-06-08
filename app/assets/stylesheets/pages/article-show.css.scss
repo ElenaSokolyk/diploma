@@ -92,10 +92,6 @@
       @include adjust-font-size-to(18px, 1, 18px);
     }
 
-    ul { 
-      display: none;
-    }
-
     li {
       @extend .col-md-3;
       @extend .col-xs-4;

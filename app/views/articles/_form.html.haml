@@ -10,7 +10,7 @@
       .sub-form
         .documents-container
           .title
-            = fa_icon 'caret-up'
+            = fa_icon 'caret-right'
             Documents
           = simple_fields_for :documents, Document.new do |document_form|
             %ul.documents-list
@@ -21,6 +21,8 @@
                       .preview
                         - if document.file.image?
                           = image_tag document.file.thumb
+                        - else
+                          = image_tag document.decorate.document_icon
                       .name= document.filename
                     = link_to document, class: 'content remove' do
                       = fa_icon 'trash-o'

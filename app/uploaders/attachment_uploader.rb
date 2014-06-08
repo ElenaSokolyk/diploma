@@ -9,6 +9,8 @@ class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   storage :file
+  
+  CarrierWave::SanitizedFile.sanitize_regexp = /[^a-zA-Zа-яА-ЯёЁ0-9\.\_\-\+\s\:]/
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -52,7 +54,15 @@ class AttachmentUploader < CarrierWave::Uploader::Base
     resize_and_pad(100, 100, :transparent, 'Center')
   end
 
+  version :huge, if: :image? do
+    resize_to_fit(560, 460)
+  end
+
   def image?(new_file = self)
     new_file.content_type.start_with? 'image'
+  end
+  
+  def extension_white_list
+    %w(jpg jpeg gif png doc docx pdf xls xlsx ppt pptx)
   end
 end

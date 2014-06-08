@@ -7,6 +7,9 @@
             {{#image}}
             %img{src: '{{url}}'}
             {{/image}}
+            {{^image}}
+            %img{src: '/assets/{{icon}}'}
+            {{/image}}
           .name {{name}}
           %input{type: :hidden, name: 'article[documents_attributes][][id]', value: "{{id}}"}
         = link_to "/documents/{{id}}", class: 'content remove' do

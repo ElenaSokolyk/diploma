@@ -7,22 +7,6 @@
     @extend .col-md-12;
   }
   
-//  .sub-form {
-//    @extend .col-md-12;
-//
-//    .remove_nested_fields {
-//      @extend .btn;
-//      @extend .btn-danger;
-//      display: none;
-//    }
-//    
-//    .add_nested_fields {
-//      @extend .btn;
-//      @extend .btn-success;
-//      display: block;
-//    }
-//  }
-  
   .form-actions {
     @include margin-leader(1);
     text-align: left;

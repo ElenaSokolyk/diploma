@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
   end
   
   def remove_unrelated_documents
-    Document.where(article_id: nil).destroy_all
+    Document.where('article_id IS NULL OR file IS NULL').destroy_all
   end
 end
