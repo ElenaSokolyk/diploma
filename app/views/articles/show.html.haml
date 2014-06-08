@@ -12,7 +12,7 @@
       - unless @article.documents.empty?
         .documents-container
           .title
-            = fa_icon 'caret-down'
+            = fa_icon 'caret-right'
             Documents
           %ul.documents-list
             - @article.documents.each do |document|
@@ -21,7 +21,11 @@
                   .content
                     .preview
                       - if document.file.image?
-                        = image_tag document.file.thumb
+                        %a.fancy{ href: document.file.huge.url, rel: "images" }
+                          = image_tag document.file.thumb
+                      - else
+                        = link_to document.file.url, target: :_blank do
+                          = image_tag document.decorate.document_icon
                     .name= document.filename
         
       .discussion
