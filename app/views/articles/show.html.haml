@@ -12,7 +12,7 @@
       - unless @article.documents.empty?
         .documents-container
           .title
-            = fa_icon 'caret-right'
+            = fa_icon 'caret-down'
             Documents
           %ul.documents-list
             - @article.documents.each do |document|
