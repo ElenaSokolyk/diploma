@@ -1,0 +1,12 @@
+.user-form-wrapper {
+  @extend .row;
+
+  .user-form {
+    @extend .col-xs-12;
+    @extend .col-md-7;
+  }
+
+  fieldset {
+    @include margin-trailer(1.5);
+  }
+}
