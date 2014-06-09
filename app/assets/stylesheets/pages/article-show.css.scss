@@ -85,6 +85,8 @@
   .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
+    @include adjust-font-size-to(14px, 1, 18px);
+    @extend .row;
   }
 
   .documents-container {
@@ -103,9 +105,24 @@
       }
     }
   }
-}
 
-//Own styles
-.discussion {
-  .comment { @extend %comment; }
+  .meta-info {
+    @extend .col-xs-4;
+  }
+
+  .date-info {
+    @include padding-leader(.5);
+    @include padding-trailer(.5);
+  }
+
+  .follow-actions {
+    @include padding-leader(.25);
+    @include padding-trailer(.25);
+    text-align: right;
+  }
+
+  //Own styles
+  .discussion {
+    .comment { @extend %comment; }
+  }
 }

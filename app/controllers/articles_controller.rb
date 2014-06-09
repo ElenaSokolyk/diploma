@@ -2,11 +2,28 @@ class ArticlesController < ApplicationController
   skip_before_filter :remove_unrelated_documents, only: [:create, :update]
 
   def index
-    @articles = current_user.articles.includes(:documents)
+    @articles = current_user.articles.includes(:documents, comments: [:subcomments])
   end
 
   def new 
     @article = Article.new
+  end
+
+  def create
+    @article = current_user.articles.build(article_params)
+    if @article.save
+      attach_documents
+      flash[:success] = "Your article was successfully created"
+      redirect_to user_root_path
+    else
+      flash[:error] = "Error occured"
+      render "new"
+    end
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    @comment = current_user.comments.build(commentable: @article)
   end
 
   def edit
@@ -28,23 +45,6 @@ class ArticlesController < ApplicationController
     else
       render 'nothing'
     end
-  end
-
-  def create
-    @article = current_user.articles.build(article_params)
-    if @article.save
-      attach_documents
-      flash[:success] = "Your article was successfully created"
-      redirect_to user_root_path
-    else
-      flash[:error] = "Error occured"
-      render "new"
-    end
-  end
-
-  def show
-    @article = Article.find(params[:id])
-    @comment = current_user.comments.build(commentable: @article)
   end
 
   private 

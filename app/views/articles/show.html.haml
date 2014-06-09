@@ -3,16 +3,23 @@
     .col-sm-8.blog-main
       .blog-post
         %h2.blog-post-title=@article.title
-        %p.blog-post-meta
-          =@article.created_at 
-          by
-          %a{:href => "#"}= @article.user.email
-        %p=@article.text.html_safe
+        .blog-post-meta
+          .user-info.meta-info
+            = link_to @article.user do
+              .initials
+                = fa_icon 'user'
+                = @article.user.decorate.initials
+              .description= @article.user.description
+          .date-info.meta-info
+            = @article.updated_at
+          .follow-actions.meta-info
+            = current_user.decorate.subscription_link_for @article.user
+        %p= @article.text.html_safe
         
       - unless @article.documents.empty?
         .documents-container
           .title
-            = fa_icon 'caret-right'
+            = fa_icon 'caret-down'
             Documents
           %ul.documents-list
             - @article.documents.each do |document|

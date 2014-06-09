@@ -18,11 +18,14 @@
 
 @import "structures/responsive_square";
 @import "structures/document_list_element";
+@import "structures/user_form";
+@import "structures/info_box";
 
 @import "pages/devise";
 @import "pages/article-show";
 @import "pages/articles/index";
 @import "pages/landing";
+@import "pages/users/show";
 
 @import "modules/navbar";
 @import "modules/footer";
