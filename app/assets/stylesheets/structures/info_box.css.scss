@@ -1,0 +1,14 @@
+.info-box {
+  @extend .row;
+
+  .info-label {
+    @extend .label;
+    @extend .label-default;
+  }
+  
+  .value {
+    padding-left: 10px;
+    @include inline-block;
+    @include adjust-font-size-to(16px, 1)
+  }
+}

@@ -10,6 +10,10 @@ Diploma::Application.routes.draw do
 
   resources :articles
   resources :comments
+  resources :users do
+    post 'follow', on: :member
+    delete 'unfollow', on: :member
+  end
   resources :documents, only: [:create, :destroy]
   match '/documents' => 'documents#create', via: :patch
 end

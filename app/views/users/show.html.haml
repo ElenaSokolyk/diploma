@@ -1,0 +1,47 @@
+.page
+  .page-header
+    .page-title
+      %h1
+        User profile
+    .actions
+      = current_user.decorate.subscription_link_for(@user)
+      = link_to "Go Back", :back, class: 'btn btn-default'
+
+  .user-info
+    .info-box
+      .info-label Name
+      .value= @user.name
+    .info-box
+      .info-label Surname
+      .value= @user.surname
+    .info-box
+      .info-label Patronymic
+      .value= @user.patronymic
+    .info-box
+      .info-label Description
+      .value= @user.description
+    .info-box
+      .info-label Email
+      .value= @user.email
+
+  .articles-container
+    .title
+      = fa_icon 'caret-down'
+      Articles
+
+    %ul.articles
+      - @user.articles.each do |article|
+        %li.article-wrapper
+          %span.actions-wrapper
+            =link_to '', edit_article_path(article), class: 'fa fa-pencil'
+            =link_to '', article_path(article), method: :delete, confirm: "Are you sure?", class: 'fa fa-trash-o'
+          = link_to article, class: 'article' do
+            .header
+              .text= article.title
+            .content= article.decorate.short_text
+            .meta-info
+              .author= 'Author: ' + article.user.email
+              .updated= 'Updated at: ' + article.updated_at.to_s
+              %ul
+                %li.documents= 'Documents: ' + article.documents.count.to_s
+                %li.comments= 'Comments: ' + article.decorate.comments_count.to_s

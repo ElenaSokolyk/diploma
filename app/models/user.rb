@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
 
   has_many :articles
   has_many :comments
+  has_many :subscriptions, foreign_key: 'owner_id'
+  has_many :users, through: :subscriptions, source: :user
 end
