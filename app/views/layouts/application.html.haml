@@ -8,6 +8,8 @@
   %body{ body_attributes }
     .outer-wrapper
       = render 'layouts/navbar'
-      .container= yield
+      .container
+        = render 'layouts/flash_message'
+        = yield
       .footer-buffer
     = render 'layouts/footer'

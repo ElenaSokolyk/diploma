@@ -1,0 +1,18 @@
+.flash-message {
+  z-index: 100;
+  width: 100%;
+  .alert {padding: 0}
+  .text {padding: 15px}
+  
+
+  .fa {
+    float: right;
+    color: gray;
+    opacity: 0.2;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

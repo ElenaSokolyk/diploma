@@ -37,6 +37,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Your article was successfully created"
       redirect_to user_root_path
     else
+      flash[:error] = "Error occured"
       render "new"
     end
   end

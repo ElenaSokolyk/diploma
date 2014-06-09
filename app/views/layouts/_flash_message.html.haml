@@ -1,0 +1,15 @@
+-if flash[:error] || flash[:alert] 
+  .flash-message
+    .text.alert.alert-danger
+      = flash[:error] || flash[:alert]
+      %a.hide-flash=fa_icon 'times'
+-if flash[:notice] 
+  .flash-message
+    .text.alert.alert-info
+      = flash[:notice]
+      %a.hide-flash=fa_icon 'times'
+-if flash[:success]
+  .flash-message
+    .text.alert.alert-success
+      = flash[:success]
+      %a.hide-flash=fa_icon 'times'
